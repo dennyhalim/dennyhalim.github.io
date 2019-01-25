@@ -1,7 +1,7 @@
 {
   "$jason": {
     "head": {
-      "title": "Coba Jasonette",
+      "title": "Test Jasonette",
       "styles": {
         "bold": {
           "font": "HelveticaNeue-CondensedBold",
@@ -23,7 +23,7 @@
     },
     "body": {
       "header": {
-        "title": "Jasonpedia",
+        "title": "Coba Jasonpedia",
         "style": {
           "background": "#8bb92d",
           "color": "#ffffff",
