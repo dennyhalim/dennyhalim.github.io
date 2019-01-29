@@ -83,10 +83,10 @@
           "items": [
             {
               "type": "label",
-              "text": "Core",
+              "text": "Artikel Graphe",
               "class": "bold padded",
               "href": {
-                "url": "https://jasonette.github.io/Jasonpedia/core/index.json"
+                "url": "https://dennyhalim.github.io/jasonette/rss-graphe.json"
               }
             },
             {
