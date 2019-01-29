@@ -35,9 +35,9 @@
               "color": "#000000"
             },
             "menu": {
-              "text": "View JSON",
+              "text": "View Web",
               "href": {
-                "url": "https://github.com/Jasonette/Jasonpedia/blob/gh-pages/template/rss.json",
+                "url": "http://graphe-ministry.org/articles/",
                 "view": "web"
               }
             }
