@@ -12,7 +12,7 @@
         "reload": {
           "type": "$network.request",
           "options": {
-            "url": "graphe-ministry.org/articles/feed",
+            "url": "http://graphe-ministry.org/articles/feed",
             "dataType": "rss"
           },
           "success": {
