@@ -75,6 +75,9 @@
                 {
                   "type": "image",
                   "url": "{{image.url}}"
+                },
+                {
+                  "text": "{{description}}"
                 }
               ]
             }
