@@ -63,7 +63,9 @@
                       "size": "20"
                     },
                     "text": "{{title}}",
-                    "url": "{{link}}"
+                     "href": {
+                       "url": "{{link}}"
+                     }
                   },
                   {
                     "type": "label",
