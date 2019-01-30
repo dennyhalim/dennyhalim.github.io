@@ -1,7 +1,7 @@
 {
   "$jason": {
     "head": {
-      "title": "Test Jasonette",
+      "title": "Alkitabiah.org",
       "styles": {
         "bold": {
           "font": "HelveticaNeue-CondensedBold",
@@ -23,7 +23,7 @@
     },
     "body": {
       "header": {
-        "title": "Coba Jasonpedia",
+        "title": "Alkitabiah.org",
         "style": {
           "background": "#8bb92d",
           "color": "#ffffff",
@@ -31,9 +31,9 @@
           "size": "14"
         },
         "menu": {
-          "text": "View JSON",
+          "text": "View Web",
           "href": {
-            "url": "https://github.com/Jasonette/Jasonpedia/blob/gh-pages/demo.json",
+            "url": "https://alkitabiah.org",
             "view": "web"
           }
         }
