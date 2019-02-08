@@ -126,16 +126,16 @@
               "text": "Seminar lain",
               "class": "bold padded",
               "href": {
-                "url": "https://www.youtube.com/channel/UCJKiBlyYJbaPaRUOmrlD4Zw/playlists"
-              }
+                "url": "https://www.youtube.com/channel/UCJKiBlyYJbaPaRUOmrlD4Zw/playlists",
+              "view": "web"}
             },
             {
               "type": "label",
               "text": "Pembahasan Injil Matius",
               "class": "bold padded",
               "href": {
-                "url": "https://archive.org/download/PembahasanAlkitabInjilMatius/PembahasanAlkitabInjilMatius_vbr.m3u"
-              }
+                "url": "https://archive.org/download/PembahasanAlkitabInjilMatius/PembahasanAlkitabInjilMatius_vbr.m3u",
+              "view": "web"}
             }
           ]
         }
