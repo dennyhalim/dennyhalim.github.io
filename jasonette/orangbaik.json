@@ -6,9 +6,9 @@
     "body": {
       "header": {
         "menu": {
-          "text": "View JSON",
+          "text": "View Web",
           "href": {
-            "url": "https://github.com/Jasonette/Jasonpedia/blob/gh-pages/view/component/image/index.json",
+            "url": "https://dennyhalim.github.io/alkitabiah/traktat/orangbaik/",
             "view": "web"
           }
         }
@@ -19,7 +19,7 @@
           "style": {
             "background": "#f5f5f5"
           },
-          "text": "Full width image"
+          "text": "Apakah Anda Seorang yang Baik?"
         },
         "items": [{
           "type": "image",
@@ -28,15 +28,7 @@
             "padding": "0"
           },
           "url": "https://dennyhalim.github.io/alkitabiah/traktat/orangbaik/indonesian-p1.jpg"
-        }]
-      }, {
-        "header": {
-          "type": "label",
-          "style": {
-            "background": "#f5f5f5"
-          },
-          "text": "Full width image"
-        },
+        }],
         "items": [{
           "type": "image",
           "style": {
@@ -44,15 +36,7 @@
             "padding": "0"
           },
           "url": "https://dennyhalim.github.io/alkitabiah/traktat/orangbaik/indonesian-p2.jpg"
-        }]
-      },{
-        "header": {
-          "type": "label",
-          "style": {
-            "background": "#f5f5f5"
-          },
-          "text": "Full width image"
-        },
+        }],
         "items": [{
           "type": "image",
           "style": {
@@ -60,15 +44,7 @@
             "padding": "0"
           },
           "url": "https://dennyhalim.github.io/alkitabiah/traktat/orangbaik/indonesian-p3.jpg"
-        }]
-      },{
-        "header": {
-          "type": "label",
-          "style": {
-            "background": "#f5f5f5"
-          },
-          "text": "Full width image"
-        },
+        }],
         "items": [{
           "type": "image",
           "style": {
@@ -76,15 +52,7 @@
             "padding": "0"
           },
           "url": "https://dennyhalim.github.io/alkitabiah/traktat/orangbaik/indonesian-p4.jpg"
-        }]
-      },{
-        "header": {
-          "type": "label",
-          "style": {
-            "background": "#f5f5f5"
-          },
-          "text": "Full width image"
-        },
+        }],
         "items": [{
           "type": "image",
           "style": {
@@ -92,15 +60,7 @@
             "padding": "0"
           },
           "url": "https://dennyhalim.github.io/alkitabiah/traktat/orangbaik/indonesian-p5.jpg"
-        }]
-      },{
-        "header": {
-          "type": "label",
-          "style": {
-            "background": "#f5f5f5"
-          },
-          "text": "Full width image"
-        },
+        }],
         "items": [{
           "type": "image",
           "style": {
@@ -108,15 +68,7 @@
             "padding": "0"
           },
           "url": "https://dennyhalim.github.io/alkitabiah/traktat/orangbaik/indonesian-p6.jpg"
-        }]
-      },{
-        "header": {
-          "type": "label",
-          "style": {
-            "background": "#f5f5f5"
-          },
-          "text": "Full width image"
-        },
+        }],
         "items": [{
           "type": "image",
           "style": {
@@ -124,15 +76,7 @@
             "padding": "0"
           },
           "url": "https://dennyhalim.github.io/alkitabiah/traktat/orangbaik/indonesian-p7.jpg"
-        }]
-      },{
-        "header": {
-          "type": "label",
-          "style": {
-            "background": "#f5f5f5"
-          },
-          "text": "Full width image"
-        },
+        }],
         "items": [{
           "type": "image",
           "style": {
