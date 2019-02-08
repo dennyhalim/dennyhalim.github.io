@@ -6,9 +6,9 @@
     "body": {
       "header": {
         "menu": {
-          "text": "View JSON",
+          "text": "View Web",
           "href": {
-            "url": "https://github.com/Jasonette/Jasonpedia/blob/gh-pages/view/component/image/index.json",
+            "url": "https://dennyhalim.github.io/alkitabiah/traktat/orangbaik/",
             "view": "web"
           }
         }
@@ -19,7 +19,7 @@
           "style": {
             "background": "#f5f5f5"
           },
-          "text": "Full width image"
+          "text": "Apakah Anda Seorang Yang Baik?"
         },
         "items": [{
           "type": "image",
@@ -35,7 +35,7 @@
           "style": {
             "background": "#f5f5f5"
           },
-          "text": "Full width image"
+          "text": ""
         },
         "items": [{
           "type": "image",
@@ -51,7 +51,7 @@
           "style": {
             "background": "#f5f5f5"
           },
-          "text": "Full width image"
+          "text": ""
         },
         "items": [{
           "type": "image",
@@ -67,7 +67,7 @@
           "style": {
             "background": "#f5f5f5"
           },
-          "text": "Full width image"
+          "text": ""
         },
         "items": [{
           "type": "image",
@@ -83,7 +83,7 @@
           "style": {
             "background": "#f5f5f5"
           },
-          "text": "Full width image"
+          "text": ""
         },
         "items": [{
           "type": "image",
@@ -99,7 +99,7 @@
           "style": {
             "background": "#f5f5f5"
           },
-          "text": "Full width image"
+          "text": ""
         },
         "items": [{
           "type": "image",
@@ -115,7 +115,7 @@
           "style": {
             "background": "#f5f5f5"
           },
-          "text": "Full width image"
+          "text": ""
         },
         "items": [{
           "type": "image",
@@ -131,7 +131,7 @@
           "style": {
             "background": "#f5f5f5"
           },
-          "text": "Full width image"
+          "text": ""
         },
         "items": [{
           "type": "image",
