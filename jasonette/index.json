@@ -136,7 +136,16 @@
               "href": {
                 "url": "https://archive.org/download/PembahasanAlkitabInjilMatius/PembahasanAlkitabInjilMatius_vbr.m3u",
               "view": "web"}
+            },
+            {
+              "type": "label",
+              "text": "test demo",
+              "class": "bold padded",
+              "href": {
+                "url": "https://jasonette.github.io/Jasonpedia/demo.json"
+              }
             }
+
           ]
         }
       ]
