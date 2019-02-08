@@ -104,30 +104,6 @@
               "href": {
                 "url": "https://dennyhalim.github.io/jasonette/rss-martir.json"
               }
-            },
-            {
-              "type": "label",
-              "text": "Action",
-              "class": "bold padded",
-              "href": {
-                "url": "https://jasonette.github.io/Jasonpedia/action/index.json"
-              }
-            },
-            {
-              "type": "label",
-              "text": "Template",
-              "class": "bold padded",
-              "href": {
-                "url": "https://jasonette.github.io/Jasonpedia/template/index.json"
-              }
-            },
-            {
-              "type": "label",
-              "text": "Web Container",
-              "class": "bold padded",
-              "href": {
-                "url": "https://jasonette.github.io/Jasonpedia/webcontainer/index.json"
-              }
             }
           ]
         },
