@@ -120,6 +120,22 @@
               "href": {
                 "url": "https://archive.org/download/KhotbahKebenaranMemerdekakan/KhotbahKebenaranMemerdekakan_vbr.m3u",
                 "view": "app"              }
+            },
+            {
+              "type": "label",
+              "text": "Peta Zaman",
+              "class": "bold padded",
+              "href": {
+                "url": "https://www.youtube.com/channel/UCJKiBlyYJbaPaRUOmrlD4Zw/playlists"
+              }
+            },
+            {
+              "type": "label",
+              "text": "Kotbah Kebenaran Memerdekakan",
+              "class": "bold padded",
+              "href": {
+                "url": "https://archive.org/download/PembahasanAlkitabInjilMatius/PembahasanAlkitabInjilMatius_vbr.m3u"
+              }
             }
           ]
         }
