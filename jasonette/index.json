@@ -38,32 +38,6 @@
           }
         }
       },
-      "sections": [
-        {
-          "items": [
-            {
-              "type": "vertical",
-              "style": {
-                "background": "rgba(14,122,254,0.1)",
-                "padding": "20"
-              },
-              "href": {
-                "url": "mailto:?subject=Documentation&body=https://jasonette.github.io/documentation",
-                "view": "app"
-              },
-              "components": [
-                {
-                  "type": "label",
-                  "text": "Send yourself Documentation",
-                  "class": "bold",
-                  "style": {
-                    "color": "rgb(14,122,254)"
-                  }
-                }
-              ]
-            }
-          ]
-        },
         {
           "header": {
             "type": "vertical",
