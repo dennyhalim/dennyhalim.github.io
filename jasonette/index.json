@@ -104,6 +104,14 @@
               "href": {
                 "url": "https://dennyhalim.github.io/jasonette/rss-martir.json"
               }
+            },
+            {
+              "type": "label",
+              "text": "Peta Zaman",
+              "class": "bold padded",
+              "href": {
+                "url": "https://www.youtube.com/playlist?list=PLghyG1d1S98d9tahHE_03kdp1Sezy62p3&loop=1&autoplay=0",
+                "view": "app"              }
             }
           ]
         }
