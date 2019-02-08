@@ -54,7 +54,7 @@
               "components": [
                 {
                   "type": "label",
-                  "text": "Send yourself Documentation",
+                  "text": "Kirimkan link ke email",
                   "class": "bold",
                   "style": {
                     "color": "rgb(14,122,254)"
