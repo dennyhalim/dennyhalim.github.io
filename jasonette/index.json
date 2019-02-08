@@ -83,6 +83,14 @@
           "items": [
             {
               "type": "label",
+              "text": "Orang Baik",
+              "class": "bold padded",
+              "href": {
+                "url": "https://dennyhalim.github.io/jasonette/orangbaik.json"
+              }
+            },
+            {
+              "type": "label",
               "text": "Artikel Graphe",
               "class": "bold padded",
               "href": {
