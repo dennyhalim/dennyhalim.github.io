@@ -73,11 +73,11 @@
             "components": [{
               "type": "label",
               "class": "bold",
-              "text": "Kumpulan Situs Alkitabiah"
+              "text": "Bahan Alkitabiah"
             }, {
               "type": "label",
               "class": "normal",
-              "text": "Mengumpulkan Situs-situs Alkitabiah untuk mempermudah akses"
+              "text": "Mengumpulkan Berbagai Bahan Alkitabiah: berita, artikel, video, kotbah, dsb."
             }]
           },
           "items": [
