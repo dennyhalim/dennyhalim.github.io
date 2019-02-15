@@ -204,6 +204,14 @@
             },
             {
               "type": "label",
+              "text": "Artikel Bahasa Indonesia",
+              "class": "bold padded",
+              "href": {
+                "url": "https://dennyhalim.github.io/jasonette/index.json"
+              }
+            },
+            {
+              "type": "label",
               "text": "test demo",
               "class": "bold padded",
               "href": {
