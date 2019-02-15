@@ -91,6 +91,15 @@
             },
             {
               "type": "label",
+              "text": "TruelyFanatic",
+              "class": "bold padded",
+              "href": {
+                "url": "https://dennyhalim.github.io/jasonette/rss.json",
+                "options": { "urlfeed" : "https://truelyfanatic.wordpress.com/feed" }
+              }
+            },
+            {
+              "type": "label",
               "text": "Lighthousetrails Blog",
               "class": "bold padded",
               "href": {
