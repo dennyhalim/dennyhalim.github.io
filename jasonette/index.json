@@ -100,11 +100,38 @@
             },
             {
               "type": "label",
+              "text": "Ajaran Alkitabiah",
+              "class": "bold padded",
+              "href": {
+                "url": "https://dennyhalim.github.io/jasonette/rss.json",
+                "options": { "urlfeed" : "https://alkitabiah.wordpress.com/feed" }
+              }
+            },
+            {
+              "type": "label",
+              "text": "Dance Suat Bible Class",
+              "class": "bold padded",
+              "href": {
+                "url": "https://dennyhalim.github.io/jasonette/rss.json",
+                "options": { "urlfeed" : "https://dancesuatbibleclass.wordpress.com/feed" }
+              }
+            },
+            {
+              "type": "label",
               "text": "Sejarah Martir",
               "class": "bold padded",
               "href": {
                 "url": "https://dennyhalim.github.io/jasonette/rss.json",
                 "options": { "urlfeed" : "https://sejarahmartir.wordpress.com/feed" }
+              }
+            },
+            {
+              "type": "label",
+              "text": "Surga Benar",
+              "class": "bold padded",
+              "href": {
+                "url": "https://dennyhalim.github.io/jasonette/rss.json",
+                "options": { "urlfeed" : "https://surgabenar.blogspot.com/feeds/posts/default" }
               }
             },
             {
@@ -123,6 +150,15 @@
               "href": {
                 "url": "https://dennyhalim.github.io/jasonette/rss.json",
                 "options": { "urlfeed" : "https://feeds.feedburner.com/alkitabiah" }
+              }
+            },
+            {
+              "type": "label",
+              "text": "Slideshare Alkitabiah",
+              "class": "bold padded",
+              "href": {
+                "url": "https://dennyhalim.github.io/jasonette/rss.json",
+                "options": { "urlfeed" : "http://www.slideshare.net/rss/user/alkitabiah" }
               }
             },
             {
