@@ -107,6 +107,14 @@
             },
             {
               "type": "label",
+              "text": "Doktrin Alkitabiah",
+              "class": "bold padded",
+              "href": {
+                "url": "https://dennyhalim.github.io/jasonette/rss-yesustuhan.json"
+              }
+            },
+            {
+              "type": "label",
               "text": "Peta Zaman dan Keselamatan",
               "class": "bold padded",
               "href": {
