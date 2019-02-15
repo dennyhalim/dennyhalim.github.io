@@ -83,10 +83,10 @@
           "items": [
             {
               "type": "label",
-              "text": "Orang Baik",
+              "text": "Good Person",
               "class": "bold padded",
               "href": {
-                "url": "https://dennyhalim.github.io/jasonette/orangbaik.json"
+                "url": "https://dennyhalim.github.io/jasonette/goodperson.json"
               }
             },
             {
