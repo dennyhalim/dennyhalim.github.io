@@ -1,0 +1,162 @@
+{
+  "$jason": {
+    "head": {
+      "title": "Biblical Articles & News",
+      "styles": {
+        "bold": {
+          "font": "HelveticaNeue-CondensedBold",
+          "size": "15"
+        },
+        "padded": {
+          "padding": "10"
+        },
+        "normal": {
+          "font": "HelveticaNeue",
+          "size": "12"
+        }
+      },
+      "actions": {
+        "$foreground": {
+          "type": "$reload"
+        }
+      }
+    },
+    "body": {
+      "header": {
+        "title": "Biblical Articles & News",
+        "style": {
+          "background": "#8bb92d",
+          "color": "#ffffff",
+          "font": "AvenirNext-Bold",
+          "size": "14"
+        },
+        "menu": {
+          "text": "View Web",
+          "href": {
+            "url": "https://www.lighthousetrailsresearch.com/blog/?utm_medium=apk&utm_source=alkitabiah.org",
+            "view": "web"
+          }
+        }
+      },
+      "sections": [
+        {
+          "items": [
+            {
+              "type": "vertical",
+              "style": {
+                "background": "rgba(14,122,254,0.1)",
+                "padding": "20"
+              },
+              "href": {
+                "url": "mailto:?subject=Alkitabiah.org&body=https://alkitabiah.org/pustaka/",
+                "view": "app"
+              },
+              "components": [
+                {
+                  "type": "label",
+                  "text": "Kirimkan link ke email",
+                  "class": "bold",
+                  "style": {
+                    "color": "rgb(14,122,254)"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "header": {
+            "type": "vertical",
+            "style": {
+              "background": "#ebebeb"
+            },
+            "components": [{
+              "type": "label",
+              "class": "bold",
+              "text": "Bahan Alkitabiah"
+            }, {
+              "type": "label",
+              "class": "normal",
+              "text": "Mengumpulkan Berbagai Bahan Alkitabiah: berita, artikel, video, kotbah, dsb."
+            }]
+          },
+          "items": [
+            {
+              "type": "label",
+              "text": "Orang Baik",
+              "class": "bold padded",
+              "href": {
+                "url": "https://dennyhalim.github.io/jasonette/orangbaik.json"
+              }
+            },
+            {
+              "type": "label",
+              "text": "Artikel Graphe",
+              "class": "bold padded",
+              "href": {
+                "url": "https://dennyhalim.github.io/jasonette/rss-graphe.json"
+              }
+            },
+            {
+              "type": "label",
+              "text": "Sejarah Martir",
+              "class": "bold padded",
+              "href": {
+                "url": "https://dennyhalim.github.io/jasonette/rss-martir.json"
+              }
+            },
+            {
+              "type": "label",
+              "text": "Doktrin Alkitabiah",
+              "class": "bold padded",
+              "href": {
+                "url": "https://dennyhalim.github.io/jasonette/rss-yesustuhan.json"
+              }
+            },
+            {
+              "type": "label",
+              "text": "Peta Zaman dan Keselamatan",
+              "class": "bold padded",
+              "href": {
+                "url": "https://www.youtube.com/playlist?list=PLghyG1d1S98d9tahHE_03kdp1Sezy62p3&loop=1&autoplay=0",
+                "view": "app"              }
+            },
+            {
+              "type": "label",
+              "text": "Kotbah Kebenaran Memerdekakan",
+              "class": "bold padded",
+              "href": {
+                "url": "https://archive.org/download/KhotbahKebenaranMemerdekakan/KhotbahKebenaranMemerdekakan_vbr.m3u",
+                "view": "app"              }
+            },
+            {
+              "type": "label",
+              "text": "Seminar lain",
+              "class": "bold padded",
+              "href": {
+                "url": "https://www.youtube.com/channel/UCJKiBlyYJbaPaRUOmrlD4Zw/playlists",
+              "view": "app"}
+            },
+            {
+              "type": "label",
+              "text": "Pembahasan Injil Matius",
+              "class": "bold padded",
+              "href": {
+                "url": "https://archive.org/download/PembahasanAlkitabInjilMatius/PembahasanAlkitabInjilMatius_vbr.m3u",
+              "view": "app"}
+            },
+            {
+              "type": "label",
+              "text": "test demo",
+              "class": "bold padded",
+              "href": {
+                "url": "https://jasonette.github.io/Jasonpedia/demo.json"
+              }
+            }
+
+          ]
+        }
+      ]
+    }
+  }
+}
