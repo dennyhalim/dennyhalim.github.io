@@ -100,20 +100,65 @@
             },
             {
               "type": "label",
-              "text": "NowTheEndBegins.com",
-              "class": "bold padded",
-              "href": {
-                "url": "https://dennyhalim.github.io/jasonette/rss.json",
-                "options": { "urlfeed" : "https://www.nowtheendbegins.com/feed" }
-              }
-            },
-            {
-              "type": "label",
               "text": "WayofLife.org",
               "class": "bold padded",
               "href": {
                 "url": "https://dennyhalim.github.io/jasonette/rss.json",
                 "options": { "urlfeed" : "http://fetchrss.com/rss/5887617c8a93f88e5c7b23c667659280686.xml" }
+              }
+            },
+            {
+              "type": "label",
+              "text": "CrossExamined.org",
+              "class": "bold padded",
+              "href": {
+                "url": "https://dennyhalim.github.io/jasonette/rss.json",
+                "options": { "urlfeed" : "https://crossexamined.org/feed/" }
+              }
+            },
+            {
+              "type": "label",
+              "text": "Josh.org",
+              "class": "bold padded",
+              "href": {
+                "url": "https://dennyhalim.github.io/jasonette/rss.json",
+                "options": { "urlfeed" : "https://www.josh.org/feed/" }
+              }
+            },
+            {
+              "type": "label",
+              "text": "OneMinuteApologist.com",
+              "class": "bold padded",
+              "href": {
+                "url": "https://dennyhalim.github.io/jasonette/rss.json",
+                "options": { "urlfeed" : "https://oneminuteapologist.com/feed/" }
+              }
+            },
+            {
+              "type": "label",
+              "text": "ColdCaseChristianity.com",
+              "class": "bold padded",
+              "href": {
+                "url": "https://dennyhalim.github.io/jasonette/rss.json",
+                "options": { "urlfeed" : "https://normangeisler.com/feed/" }
+              }
+            },
+            {
+              "type": "label",
+              "text": "NormanGeisler.com",
+              "class": "bold padded",
+              "href": {
+                "url": "https://dennyhalim.github.io/jasonette/rss.json",
+                "options": { "urlfeed" : "https://coldcasechristianity.com/feed/" }
+              }
+            },
+            {
+              "type": "label",
+              "text": "NowTheEndBegins.com",
+              "class": "bold padded",
+              "href": {
+                "url": "https://dennyhalim.github.io/jasonette/rss.json",
+                "options": { "urlfeed" : "https://www.nowtheendbegins.com/feed" }
               }
             },
             {
