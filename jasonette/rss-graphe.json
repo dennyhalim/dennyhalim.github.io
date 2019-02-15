@@ -1,7 +1,7 @@
 {
   "$jason": {
     "head": {
-      "title": "Graphe Ministry Articles",
+      "title": "Artikel Alkitabiah",
       "actions": {
         "$pull": {
           "trigger": "reload"
@@ -37,7 +37,7 @@
             "menu": {
               "text": "View Web",
               "href": {
-                "url": "http://graphe-ministry.org/articles/",
+                "url": "http://graphe-ministry.org/articles/?utm_medium=apk&utm_source=alkitabiah.org",
                 "view": "web"
               }
             }
@@ -75,7 +75,7 @@
                   {
                     "type": "label",
                     "text": "{{summary}}",
-                    "href": { "url": "{{link}}", "view": "web" }
+                    "href": { "url": "{{link}}?utm_medium=apk&utm_source=alkitabiah.org", "view": "web" }
                   }
                 ]
               },
