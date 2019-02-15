@@ -74,7 +74,8 @@
                   },
                   {
                     "type": "label",
-                    "text": "{{summary}}"
+                    "text": "{{summary}}",
+                    "href": { "url": "{{link}}", "view": "web" }
                   }
                 ]
               },
