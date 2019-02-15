@@ -71,6 +71,10 @@
                   {
                     "type": "label",
                     "text": "{{author}}"
+                  },
+                  {
+                    "type": "label",
+                    "text": "{{summary}}"
                   }
                 ]
               },
