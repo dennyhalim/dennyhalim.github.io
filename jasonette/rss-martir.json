@@ -37,7 +37,7 @@
             "menu": {
               "text": "View Web",
               "href": {
-                "url": "https://sejarahmartir.wordpress.com",
+                "url": "https://sejarahmartir.wordpress.com/?utm_medium=apk&utm_source=alkitabiah.org",
                 "view": "web"
               }
             }
@@ -63,10 +63,7 @@
                       "size": "20"
                     },
                     "text": "{{title}}",
-                    "href": {
-                      "url": "{{link}}",
-                      "view": "web"
-                    }
+                    "href": { "url": "{{link}}?utm_medium=apk&utm_source=alkitabiah.org", "view": "web" }
                   },
                   {
                     "type": "label",
@@ -75,7 +72,7 @@
                   {
                     "type": "label",
                     "text": "{{summary}}",
-                    "href": { "url": "{{link}}", "view": "web" }
+                    "href": { "url": "{{link}}?utm_medium=apk&utm_source=alkitabiah.org", "view": "web" }
                   }
                 ]
               },
