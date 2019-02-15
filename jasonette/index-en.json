@@ -91,26 +91,29 @@
             },
             {
               "type": "label",
-              "text": "Artikel Graphe",
+              "text": "Lighthousetrails Blog",
               "class": "bold padded",
               "href": {
-                "url": "https://dennyhalim.github.io/jasonette/rss-graphe.json"
+                "url": "https://dennyhalim.github.io/jasonette/rss.json",
+                "options": { "urlfeed" : "https://www.lighthousetrailsresearch.com/blog/?feed=rss2" }
               }
             },
             {
               "type": "label",
-              "text": "Sejarah Martir",
+              "text": "NowTheEndBegins.com",
               "class": "bold padded",
               "href": {
-                "url": "https://dennyhalim.github.io/jasonette/rss-martir.json"
+                "url": "https://dennyhalim.github.io/jasonette/rss.json",
+                "options": { "urlfeed" : "https://www.nowtheendbegins.com/feed" }
               }
             },
             {
               "type": "label",
-              "text": "Doktrin Alkitabiah",
+              "text": "WayofLife.org",
               "class": "bold padded",
               "href": {
-                "url": "https://dennyhalim.github.io/jasonette/rss-yesustuhan.json"
+                "url": "https://dennyhalim.github.io/jasonette/rss.json",
+                "options": { "urlfeed" : "http://fetchrss.com/rss/5887617c8a93f88e5c7b23c667659280686.xml" }
               }
             },
             {
