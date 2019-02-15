@@ -94,7 +94,8 @@
               "text": "Artikel Graphe",
               "class": "bold padded",
               "href": {
-                "url": "https://dennyhalim.github.io/jasonette/rss-graphe.json"
+                "url": "https://dennyhalim.github.io/jasonette/rss.json",
+                "options": { "urlfeed" : "https://feeds.feedburner.com/graphe" }
               }
             },
             {
@@ -102,7 +103,8 @@
               "text": "Sejarah Martir",
               "class": "bold padded",
               "href": {
-                "url": "https://dennyhalim.github.io/jasonette/rss-martir.json"
+                "url": "https://dennyhalim.github.io/jasonette/rss.json",
+                "options": { "urlfeed" : "https://sejarahmartir.wordpress.com/feed" }
               }
             },
             {
@@ -110,7 +112,8 @@
               "text": "Doktrin Alkitabiah",
               "class": "bold padded",
               "href": {
-                "url": "https://dennyhalim.github.io/jasonette/rss-yesustuhan.json"
+                "url": "https://dennyhalim.github.io/jasonette/rss.json",
+                "options": { "urlfeed" : "https://yesustuhan.wordpress.com/feed" }
               }
             },
             {
