@@ -119,7 +119,7 @@
               "class": "bold padded",
               "href": {
                 "url": "https://dennyhalim.github.io/jasonette/rss.json",
-                "options": { "urlfeed" : "https://alkitabiah.org/feed" }
+                "options": { "urlfeed" : "https://feeds.feedburner.com/alkitabiah" }
               }
             },
             {
