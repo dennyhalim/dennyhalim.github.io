@@ -115,6 +115,15 @@
             },
             {
               "type": "label",
+              "text": "Artikel Alkitabiah",
+              "class": "bold padded",
+              "href": {
+                "url": "https://dennyhalim.github.io/jasonette/rss.json",
+                "options": { "urlfeed" : "https://alkitabiah.org/feed" }
+              }
+            },
+            {
+              "type": "label",
               "text": "Peta Zaman dan Keselamatan",
               "class": "bold padded",
               "href": {
