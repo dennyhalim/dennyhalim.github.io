@@ -33,7 +33,7 @@
         "menu": {
           "text": "View Web",
           "href": {
-            "url": "https://alkitabiah.org",
+            "url": "https://alkitabiah.org/?utm_medium=apk&utm_source=alkitabiah.org",
             "view": "web"
           }
         }
