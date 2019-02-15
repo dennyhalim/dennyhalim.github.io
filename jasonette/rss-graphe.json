@@ -64,7 +64,8 @@
                     },
                     "text": "{{title}}",
                     "href": {
-                      "url": "https://dennyhalim.github.io/jasonette/rss-graphe.json"
+                      "url": "https://dennyhalim.github.io/jasonette/rss-graphe.json",
+                      "view": "web"
                     }
                   },
                   {
