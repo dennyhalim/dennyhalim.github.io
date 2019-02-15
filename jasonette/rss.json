@@ -69,7 +69,7 @@
                   {
                     "type": "label",
                     "text": "{{summary}}",
-                    "href": { "url": "{{link}}?utm_medium=apk&utm_source=alkitabiah.org", "view": "web" }
+                    "href": { "url": "{{origlink}}?utm_medium=apk&utm_source=alkitabiah.org", "view": "web" }
                   }
                 ]
               },
