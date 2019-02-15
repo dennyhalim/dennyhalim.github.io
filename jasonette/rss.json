@@ -12,7 +12,7 @@
         "reload": {
           "type": "$network.request",
           "options": {
-            "url": "https://sejarahmartir.wordpress.com/feed",
+            "url": "{{$params.urlfeed}}",
             "dataType": "rss"
           },
           "success": {
