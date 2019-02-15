@@ -63,10 +63,7 @@
                       "size": "20"
                     },
                     "text": "{{title}}",
-                    "href": {
-                      "url": "{{link}}",
-                      "view": "web"
-                    }
+                    "href": { "url": "{{link}}?utm_medium=apk&utm_source=alkitabiah.org", "view": "web" }
                   },
                   {
                     "type": "label",
