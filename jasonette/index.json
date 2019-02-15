@@ -159,10 +159,10 @@
             },
             {
               "type": "label",
-              "text": "test demo",
+              "text": "English Articles",
               "class": "bold padded",
               "href": {
-                "url": "https://jasonette.github.io/Jasonpedia/demo.json"
+                "url": "https://dennyhalim.github.io/jasonette/index-en.json"
               }
             }
 
