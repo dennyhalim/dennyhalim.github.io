@@ -62,7 +62,10 @@
                       "font": "HelveticaNeue-Bold",
                       "size": "20"
                     },
-                    "text": "{{title}}"
+                    "text": "{{title}}",
+                    "href": {
+                      "url": "https://dennyhalim.github.io/jasonette/rss-graphe.json"
+                    }
                   },
                   {
                     "type": "label",
