@@ -136,15 +136,6 @@
             },
             {
               "type": "label",
-              "text": "Surga Benar",
-              "class": "bold padded",
-              "href": {
-                "url": "https://dennyhalim.github.io/jasonette/rss.json",
-                "options": { "urlfeed" : "https://surgabenar.blogspot.com/feeds/posts/default" }
-              }
-            },
-            {
-              "type": "label",
               "text": "Doktrin Alkitabiah",
               "class": "bold padded",
               "href": {
@@ -168,6 +159,15 @@
               "href": {
                 "url": "https://dennyhalim.github.io/jasonette/rss.json",
                 "options": { "urlfeed" : "http://www.slideshare.net/rss/user/alkitabiah" }
+              }
+            },
+            {
+              "type": "label",
+              "text": "Surga Benar",
+              "class": "bold padded",
+              "href": {
+                "url": "https://dennyhalim.github.io/jasonette/rss.json",
+                "options": { "urlfeed" : "https://surgabenar.blogspot.com/feeds/posts/default" }
               }
             },
             {
