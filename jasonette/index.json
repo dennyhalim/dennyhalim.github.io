@@ -100,6 +100,15 @@
             },
             {
               "type": "label",
+              "text": "KristenAlkitabiah.com",
+              "class": "bold padded",
+              "href": {
+                "url": "https://dennyhalim.github.io/jasonette/rss.json",
+                "options": { "urlfeed" : "https://www.kristenalkitabiah.com/feed/" }
+              }
+            },
+            {
+              "type": "label",
               "text": "Ajaran Alkitabiah",
               "class": "bold padded",
               "href": {
