@@ -48,13 +48,13 @@
                 "padding": "20"
               },
               "href": {
-                "url": "mailto:?subject=Alkitabiah.org&body=https://alkitabiah.org/pustaka/",
+                "url": "mailto:?subject=Alkitabiah.org&body=https://alkitabiah.org/library/",
                 "view": "app"
               },
               "components": [
                 {
                   "type": "label",
-                  "text": "Kirimkan link ke email",
+                  "text": "Send link to email",
                   "class": "bold",
                   "style": {
                     "color": "rgb(14,122,254)"
@@ -73,11 +73,11 @@
             "components": [{
               "type": "label",
               "class": "bold",
-              "text": "Bahan Alkitabiah"
+              "text": "Biblical Articles & Prophecy News"
             }, {
               "type": "label",
               "class": "normal",
-              "text": "Mengumpulkan Berbagai Bahan Alkitabiah: berita, artikel, video, kotbah, dsb."
+              "text": "Collecting biblical articles and prophecy news"
             }]
           },
           "items": [
