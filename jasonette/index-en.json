@@ -172,6 +172,15 @@
             },
             {
               "type": "label",
+              "text": "WorthyNews.com",
+              "class": "bold padded",
+              "href": {
+                "url": "https://dennyhalim.github.io/jasonette/rss.json",
+                "options": { "urlfeed" : "http://www.worthynews.com/news/christian-persecution/feed" }
+              }
+            },
+            {
+              "type": "label",
               "text": "Peta Zaman dan Keselamatan",
               "class": "bold padded",
               "href": {
