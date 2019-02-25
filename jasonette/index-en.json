@@ -176,7 +176,7 @@
               "class": "bold padded",
               "href": {
                 "url": "https://dennyhalim.github.io/jasonette/rss.json",
-                "options": { "urlfeed" : "http://www.worthynews.com/news/christian-persecution/feed" }
+                "options": { "urlfeed" : "https://www.worthynews.com/news/christian-persecution/feed" }
               }
             },
             {
