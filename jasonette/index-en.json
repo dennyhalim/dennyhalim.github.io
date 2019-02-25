@@ -172,6 +172,15 @@
             },
             {
               "type": "label",
+              "text": "GodAndScience.org",
+              "class": "bold padded",
+              "href": {
+                "url": "https://dennyhalim.github.io/jasonette/rss.json",
+                "options": { "urlfeed" : "https://www.godandscience.org/godandscience.xml" }
+              }
+            },
+            {
+              "type": "label",
               "text": "WorthyNews.com",
               "class": "bold padded",
               "href": {
