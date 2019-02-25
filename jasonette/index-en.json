@@ -113,7 +113,7 @@
               "class": "bold padded",
               "href": {
                 "url": "https://dennyhalim.github.io/jasonette/rss.json",
-                "options": { "urlfeed" : "http://fetchrss.com/rss/5887617c8a93f88e5c7b23c667659280686.xml" }
+                "options": { "urlfeed" : "https://fetchrss.com/rss/5887617c8a93f88e5c7b23c667659280686.xml" }
               }
             },
             {
