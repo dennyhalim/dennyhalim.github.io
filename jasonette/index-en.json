@@ -145,7 +145,7 @@
             },
             {
               "type": "label",
-              "text": "ColdCaseChristianity.com",
+              "text": "NormanGeisler.com",
               "class": "bold padded",
               "href": {
                 "url": "https://dennyhalim.github.io/jasonette/rss.json",
@@ -154,11 +154,20 @@
             },
             {
               "type": "label",
-              "text": "NormanGeisler.com",
+              "text": "ColdCaseChristianity.com",
               "class": "bold padded",
               "href": {
                 "url": "https://dennyhalim.github.io/jasonette/rss.json",
                 "options": { "urlfeed" : "https://coldcasechristianity.com/feed/" }
+              }
+            },
+            {
+              "type": "label",
+              "text": "IndependentBaptist.com",
+              "class": "bold padded",
+              "href": {
+                "url": "https://dennyhalim.github.io/jasonette/rss.json",
+                "options": { "urlfeed" : "https://www.independentbaptist.com/feed/" }
               }
             },
             {
