@@ -190,6 +190,15 @@
             },
             {
               "type": "label",
+              "text": "Breitbart",
+              "class": "bold padded",
+              "href": {
+                "url": "https://dennyhalim.github.io/jasonette/rss.json",
+                "options": { "urlfeed" : "https://www.breitbart.com/tag/christian-persecution/feed/" }
+              }
+            },
+            {
+              "type": "label",
               "text": "WorthyNews.com",
               "class": "bold padded",
               "href": {
