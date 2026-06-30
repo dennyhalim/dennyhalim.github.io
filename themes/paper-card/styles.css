@@ -1,0 +1,270 @@
+:root {
+  --bg: #fef6ee;
+  --paper: #fffaf2;
+  --fg: #2d2419;
+  --muted: #7a6b58;
+  --rule: #e8dcc8;
+  --accent: #e07856;
+  --accent-soft: #fde4d8;
+  --shadow: 0 2px 0 rgba(45, 36, 25, 0.04), 0 8px 24px rgba(45, 36, 25, 0.06);
+  --sans: 'Nunito', 'Quicksand', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+}
+
+/* Dark mode. Auto-switches via system appearance unless pinned via
+   `color_scheme: light|dark` in config.yml.
+   Sepia-on-charcoal: the warm pastel theme keeps its friendliness by
+   shifting cream → cream-on-cocoa rather than turning blue-gray. The
+   accent stays terracotta (slightly brighter on dark). */
+@media (prefers-color-scheme: dark) {
+  :root:not(.scheme-light) {
+    --bg: #1c1814;
+    --paper: #2a231c;
+    --fg: #f5e9d8;
+    --muted: #b3a48d;
+    --rule: #3a3128;
+    --accent: #ff9b75;
+    --accent-soft: #3d2a22;
+    --shadow: 0 2px 0 rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.3);
+  }
+}
+:root.scheme-dark {
+  --bg: #1c1814;
+  --paper: #2a231c;
+  --fg: #f5e9d8;
+  --muted: #b3a48d;
+  --rule: #3a3128;
+  --accent: #ff9b75;
+  --accent-soft: #3d2a22;
+  --shadow: 0 2px 0 rgba(0, 0, 0, 0.2), 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  font-weight: 500;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 40px 20px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.container { width: 100%; max-width: 460px; }
+
+.profile-card {
+  background: var(--paper);
+  border-radius: 24px;
+  padding: 32px 24px;
+  text-align: center;
+  margin-bottom: 24px;
+  box-shadow: var(--shadow);
+}
+
+.profile-pic-wrap {
+  display: inline-block;
+  padding: 6px;
+  background: var(--accent-soft);
+  border-radius: 50%;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.profile-pic-wrap::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  top: 6px;
+  right: 0;
+  border: 3px solid var(--paper);
+}
+
+.profile-pic {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
+
+.name {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+  position: relative;
+  display: inline-block;
+}
+
+.name::after {
+  content: '';
+  position: absolute;
+  left: 8%;
+  right: 8%;
+  bottom: -2px;
+  height: 6px;
+  background: var(--accent-soft);
+  border-radius: 4px;
+  z-index: -1;
+}
+
+.description {
+  font-size: 15px;
+  color: var(--muted);
+  font-weight: 500;
+  text-wrap: pretty;
+  max-width: 32ch;
+  margin: 8px auto 0;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.link-button {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  background: var(--paper);
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--fg);
+  box-shadow: var(--shadow);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+.link-button:hover,
+.link-button:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 0 rgba(45, 36, 25, 0.04), 0 14px 32px rgba(45, 36, 25, 0.10);
+  background: var(--accent-soft);
+  outline: none;
+}
+
+.link-icon {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 12px;
+  flex-shrink: 0;
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.link-icon i { font-size: 15px; }
+
+.link-button:hover .link-icon,
+.link-button:focus-visible .link-icon {
+  background: var(--accent);
+  color: var(--paper);
+}
+
+.link-text { flex: 1; }
+.link-button-text { font-size: 13px; color: var(--muted); font-weight: 500; margin-left: 6px; }
+
+.button-container {
+  background: var(--paper);
+  border-radius: 20px;
+  padding: 18px;
+  box-shadow: var(--shadow);
+  display: flex;
+  justify-content: center;
+}
+
+.button-group {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.icon-button {
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-radius: 50%;
+  transition: transform 0.18s ease, background 0.18s ease, color 0.18s ease;
+}
+
+.icon-button i { font-size: 17px; }
+
+.icon-button:hover,
+.icon-button:focus-visible {
+  background: var(--accent);
+  color: var(--paper);
+  transform: translateY(-2px) rotate(-4deg);
+  outline: none;
+}
+
+.footer {
+  margin-top: 28px;
+  padding: 0 8px;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.65;
+  text-align: center;
+}
+
+.footer a {
+  color: var(--accent);
+  font-weight: 600;
+  border-bottom: 2px dotted var(--accent);
+}
+
+.copyright { margin-top: 8px; font-size: 12px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+}
+
+/* "Latest" link variant — soft pill on warm background */
+.link-button.link-latest {
+  align-items: flex-start;
+  background: var(--accent-soft);
+}
+.link-latest-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  margin-right: 8px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: #fff;
+  vertical-align: 1px;
+}
+.link-latest .link-text {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+          line-clamp: 2;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  line-height: 1.35;
+}

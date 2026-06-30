@@ -1,0 +1,213 @@
+# =============================================================================
+# linkyee — Site Configuration
+#
+# This file is rendered through Liquid: every {{ ... }} below is evaluated
+# at build time. Plugin output lives under `vars.<PluginName>` — see
+# `plugins/README.md` for the full plugin developer wiki.
+# =============================================================================
+
+# Theme — directory under ./themes/. Built-ins:
+#   default | minimal-mono | editorial-serif | neo-brutalism
+#   glassmorphism | terminal-retro | paper-card | newsprint
+theme: glassmorphism
+
+# HTML <html lang> attribute
+lang: "en"
+
+# Force a color scheme regardless of the visitor's system appearance:
+#   auto  — follow OS (default; the page auto-switches between light/dark)
+#   light — always render light mode
+#   dark  — always render dark mode
+# Note: dark-first themes (e.g. terminal-retro) ignore "light" — their
+# whole identity is the dark palette.
+color_scheme: auto
+
+# -----------------------------------------------------------------------------
+# Plugins — every built-in plugin is shown below as a working example.
+# Remove the ones you don't need. Output is referenced as {{ vars.PluginName }}.
+# Full reference: plugins/README.md
+#
+# ⚠️ SECRETS — never put API keys / tokens in this file. config.yml is
+# committed to git and rendered into the publicly served site. If a plugin
+# needs auth (a personal access token, Steam Web API key, weather API
+# token, ...), set it as a GitHub Actions repository secret
+# (Settings → Secrets and variables → Actions → New repository secret),
+# expose it to the build via `env:` in `.github/workflows/build.yml`,
+# and read it from the plugin with ENV['MY_SECRET']. See plugins/README.md
+# for the canonical pattern.
+# -----------------------------------------------------------------------------
+plugins:
+  # Star counts for one or more GitHub repos.
+  # Use as: {{ vars.GithubRepoStarsCountPlugin['owner/repo'] }}
+  - GithubRepoStarsCountPlugin:
+      - ZhgChgLi/ZMarkupParser
+      - ZhgChgLi/ZReviewTender
+      - ZhgChgLi/ZMediumToMarkdown
+      - ZhgChgLi/linkyee
+
+  # Latest commit (sha / date / message) for a repo. Use as:
+  #   {{ vars.GithubLastCommitPlugin['owner/repo'].date }}
+  #   {{ vars.GithubLastCommitPlugin['owner/repo'].sha }}
+  - GithubLastCommitPlugin:
+      - ZhgChgLi/linkyee
+
+  # Public profile stats (followers / following / public_repos). Use as:
+  #   {{ vars.GithubProfilePlugin['user'].followers }}
+  - GithubProfilePlugin:
+      - ZhgChgLi
+
+  # Latest items from any RSS / Atom feed (Medium, blogs, YouTube channels,
+  # podcasts...). Returns an array of { title, url, date } per feed URL.
+  # Iterate inside theme index.html with {% for item in vars.RSSFeedPlugin[...] %}.
+  - RSSFeedPlugin:
+      - https://en.zhgchg.li/feed.xml
+
+  # Days until / since a target date. Hash-style — labels become keys.
+  # Use as: {{ vars.CountdownPlugin.label.days }}, .target, .passed
+  - CountdownPlugin:
+      linkyee_release: "2024-12-21"
+
+  # Latest video for one or more YouTube channels (channel id, @handle, or URL).
+  # Use as: {{ vars.YouTubeChannelLatestVideoPlugin['@handle'].title }}
+  #         {{ vars.YouTubeChannelLatestVideoPlugin['@handle'].url }}
+  - YouTubeChannelLatestVideoPlugin:
+      - "@zhgchgli"
+
+# -----------------------------------------------------------------------------
+# Tracking
+# -----------------------------------------------------------------------------
+google_analytics_id:
+
+# -----------------------------------------------------------------------------
+# Profile header
+# -----------------------------------------------------------------------------
+title: "ZhgChgLi's Links"
+avatar: "./images/profile.jpeg"
+name: "@zhgchgli"
+tagline: >-
+    An iOS, web, and automation developer from Taiwan 🇹🇼 who also loves sharing, traveling, and writing.
+    Followed by {{ vars.GithubProfilePlugin['ZhgChgLi'].followers }} on GitHub across {{ vars.GithubProfilePlugin['ZhgChgLi'].repos }} public repos.
+
+# -----------------------------------------------------------------------------
+# Links
+#   icon  — Font Awesome class (https://fontawesome.com/search?o=r&m=free)
+#   text  — displayed text (Liquid + HTML allowed)
+#   title — link title attribute
+#   url   — destination
+#   alt   — accessibility text
+#   target — `_blank` (new tab) or `_self`
+# -----------------------------------------------------------------------------
+links:
+  - link:
+      icon: "fa-solid fa-rss"
+      text: "Tech Blog <span class='link-button-text'>(120+ Posts)</span>"
+      url: "https://zhgchg.li"
+      alt: "ZhgChgLi Tech & Travel Blog"
+      title: "ZhgChgLi Tech & Travel Blog"
+      target: "_blank"
+
+  # → uses GithubRepoStarsCountPlugin
+  - link:
+      icon: "fa-brands fa-swift"
+      text: "ZMarkupParser <span class='link-button-text'>({{vars.GithubRepoStarsCountPlugin['ZhgChgLi/ZMarkupParser']}} Stars)</span>"
+      url: "https://github.com/ZhgChgLi/ZMarkupParser"
+      alt: "ZMarkupParser is a pure-Swift library that helps you to convert HTML strings to NSAttributedString with customized style and tags."
+      title: "ZMarkupParser is a pure-Swift library that helps you to convert HTML strings to NSAttributedString with customized style and tags."
+      target: "_blank"
+  - link:
+      icon: "fa-brands fa-app-store-ios"
+      text: "ZReviewTender <span class='link-button-text'>({{vars.GithubRepoStarsCountPlugin['ZhgChgLi/ZReviewTender']}} Stars)</span>"
+      url: "https://github.com/ZhgChgLi/ZReviewTender"
+      alt: "ZReviewTender is a tool for fetching app reviews from the App Store and Google Play Console and integrating them into your workflow."
+      title: "ZReviewTender is a tool for fetching app reviews from the App Store and Google Play Console and integrating them into your workflow."
+      target: "_blank"
+  - link:
+      icon: "fa-brands fa-markdown"
+      text: "ZMediumToMarkdown <span class='link-button-text'>({{vars.GithubRepoStarsCountPlugin['ZhgChgLi/ZMediumToMarkdown']}} Stars)</span>"
+      url: "https://github.com/ZhgChgLi/ZMediumToMarkdown"
+      alt: "ZMediumToMarkdown is a powerful tool that allows you to effortlessly download and convert your Medium posts to Markdown format."
+      title: "ZMediumToMarkdown is a powerful tool that allows you to effortlessly download and convert your Medium posts to Markdown format."
+      target: "_blank"
+
+  # → uses GithubRepoStarsCountPlugin + GithubLastCommitPlugin
+  - link:
+      icon: "fa-brands fa-github"
+      text: "linkyee <span class='link-button-text'>({{vars.GithubRepoStarsCountPlugin['ZhgChgLi/linkyee']}} ⭐ · last update {{ vars.GithubLastCommitPlugin['ZhgChgLi/linkyee'].date }})</span>"
+      url: "https://github.com/ZhgChgLi/linkyee"
+      alt: "linkyee is a fully customized, open-source LinkTree alternative deployed directly on GitHub Pages."
+      title: "linkyee is a fully customized, open-source LinkTree alternative deployed directly on GitHub Pages."
+      target: "_blank"
+
+  # → uses RSSFeedPlugin (latest blog post). `latest: true` opts into the
+  #   theme's "LATEST" badge styling.
+  - link:
+      icon: "fa-solid fa-newspaper"
+      text: "{{ vars.RSSFeedPlugin['https://en.zhgchg.li/feed.xml'][0].title }}"
+      url: "{{ vars.RSSFeedPlugin['https://en.zhgchg.li/feed.xml'][0].url }}"
+      alt: "Latest blog post by ZhgChgLi"
+      title: "Latest blog post"
+      target: "_blank"
+      latest: true
+
+  # → uses YouTubeChannelLatestVideoPlugin
+  - link:
+      icon: "fa-brands fa-youtube"
+      text: "{{ vars.YouTubeChannelLatestVideoPlugin['@zhgchgli'].title }}"
+      url: "{{ vars.YouTubeChannelLatestVideoPlugin['@zhgchgli'].url }}"
+      alt: "Latest YouTube video"
+      title: "Latest YouTube video"
+      target: "_blank"
+      latest: true
+
+# -----------------------------------------------------------------------------
+# Social media buttons
+# -----------------------------------------------------------------------------
+socials:
+  - social:
+      icon: "fa-brands fa-medium"
+      url: "https://blog.zhgchg.li"
+      title: "ZhgChgLi's Medium"
+      alt: "ZhgChgLi's Medium"
+      target: "_blank"
+  - social:
+      icon: "fa-brands fa-github"
+      url: "https://github.com/ZhgChgLi"
+      title: "ZhgChgLi's GitHub"
+      alt: "ZhgChgLi's GitHub"
+      target: "_blank"
+  - social:
+      icon: "fa-brands fa-twitter"
+      url: "https://twitter.com/zhgchgli"
+      title: "ZhgChgLi's Twitter"
+      alt: "ZhgChgLi's Twitter"
+      target: "_blank"
+  - social:
+      icon: "fa-brands fa-linkedin"
+      url: "https://www.linkedin.com/in/zhgchgli/"
+      title: "ZhgChgLi's LinkedIn"
+      alt: "ZhgChgLi's LinkedIn"
+      target: "_blank"
+  - social:
+      icon: "fa-brands fa-instagram"
+      url: "https://www.instagram.com/zhgchgli/"
+      title: "Instagram"
+      alt: "ZhgChgLi's Instagram"
+      target: "_blank"
+  - social:
+      icon: "fa-solid fa-envelope"
+      url: "mailto:zhgchgli@gmail.com"
+      title: "Email: zhgchgli@gmail.com"
+      alt: "zhgchgli@gmail.com"
+      target: "_blank"
+
+# -----------------------------------------------------------------------------
+# Footer (uses CountdownPlugin)
+# -----------------------------------------------------------------------------
+footer: >
+    Hi there! Follow me on Medium or GitHub, or stay connected on Instagram or LinkedIn.
+    <br>linkyee has been live for {{ vars.CountdownPlugin.linkyee_release.days }} days. 🎉
+
+# Footer copyright message
+# Linkyee is a 100% free, open-source project—feel free to modify the copyright message as you like. :)
+copyright: >
+  © {{ year }} <a href="https://link.zhgchg.li" target="_blank">ZhgChgLi</a>. Powered by <a href="https://github.com/ZhgChgLi/linkyee" target="_blank">linkyee</a>
