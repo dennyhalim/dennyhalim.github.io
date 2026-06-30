@@ -105,7 +105,7 @@ links:
       target: "_blank"
 
   - link:
-      icon: "fa-solid fa-rss"
+      icon: "fa-solid fa-wordpress"
       text: "Blog"
       url: "https://denny.wordpress.com"
       alt: "wordpress"
@@ -113,19 +113,19 @@ links:
       target: "_blank"
 
   - link:
-      icon: "fa-solid fa-cart-shopping"
+      icon: "fa-solid fa-screwdriver-wrench"
       text: "Polaris Network"
       url: "https://www.mypolaris.com/"
       target: "_blank"
 
   - link:
-      icon: "fa-solid fa-rss"
+      icon: "fa-solid fa-blogger"
       text: "Blogspot <span class='link-button-text'>(120+ Posts)</span>"
       url: "https://dennyhalim.blogspot.com"
       target: "_blank"
 
   - link:
-      icon: "fa-solid fa-rss"
+      icon: "fa-solid fa-blogger"
       text: "Tips Blogspot <span class='link-button-text'>(120+ Posts)</span>"
       url: "https://komputips.blogspot.com"
       target: "_blank"
@@ -167,7 +167,7 @@ links:
       latest: true
 
   - link:
-      icon: "fa-solid fa-newspaper"
+      icon: "fa-solid fa-cross"
       text: "{{ vars.RSSFeedPlugin['https://sabas.pages.dev/?format=rss'][0].title }}"
       url: "{{ vars.RSSFeedPlugin['https://sabas.pages.dev/?format=rss'][0].url }}"
       alt: "Latest blog post"
