@@ -99,11 +99,23 @@ tagline: >-
 # -----------------------------------------------------------------------------
 links:
   - link:
+      icon: "fa-solid fa-cart-shopping"
+      text: "domains for SALE!"
+      url: "https://www.dynadot.com/user/mypolaris"
+      target: "_blank"
+
+  - link:
       icon: "fa-solid fa-rss"
-      text: "Blog <span class='link-button-text'>(120+ Posts)</span>"
+      text: "Blog"
       url: "https://denny.wordpress.com"
       alt: "wordpress"
       title: "wordpress"
+      target: "_blank"
+
+  - link:
+      icon: "fa-solid fa-cart-shopping"
+      text: "Polaris Network"
+      url: "https://www.mypolaris.com/"
       target: "_blank"
 
   - link:
