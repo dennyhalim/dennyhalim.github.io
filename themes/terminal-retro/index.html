@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>{{ title }}</title>
+
+  <meta name="last-modified" content="{{ last_modified_at }}">
+  <meta name="theme-color" content="#0c0f0a">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <meta property="og:title" content="{{ title }}" />
+  <meta name="author" content="{{ name }}" />
+  <meta property="og:locale" content="en" />
+  <meta name="description" content="{{ tagline }}" />
+  <meta property="og:description" content="{{ tagline }}" />
+  <meta property="og:site_name" content="{{ title }}" />
+  <meta property="og:image" content="{{ avatar }}" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="twitter:image" content="{{ avatar }}" />
+  <meta property="twitter:title" content="{{ title }}" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/favicons/favicon.ico">
+  <link rel="shortcut icon" href="./images/favicons/favicon.ico">
+  <meta name="apple-mobile-web-app-title" content="{{ title }}">
+  <meta name="application-name" content="{{ title }}">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="./styles.css?v={{ last_modified_at }}" />
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+
+  <main class="container">
+    <div class="window">
+      <div class="window-bar">
+        <span class="dot dot-r"></span>
+        <span class="dot dot-y"></span>
+        <span class="dot dot-g"></span>
+        <span class="window-title">~ / {{ name }}</span>
+      </div>
+      <div class="window-body">
+        <header class="profile">
+          <pre class="prompt">$ whoami</pre>
+          <img src="{{ avatar }}" alt="Profile Picture" class="profile-pic" />
+          <h1 class="name">{{ name }}<span class="caret" aria-hidden="true">&#9608;</span></h1>
+          <p class="description">{{ tagline }}</p>
+        </header>
+
+        <pre class="prompt">$ ls ./links/</pre>
+        <nav class="links" aria-label="Primary links">
+          {% for item in links %}
+            {% assign link = item.link %}
+            <a href="{{ link.url }}" target="{{ link.target }}" class="link-button{% if link.latest %} link-latest{% endif %}" alt="{{ link.alt }}" title="{{ link.title }}">
+              <span class="link-prefix" aria-hidden="true">&gt;</span>
+              <span class="link-icon" aria-hidden="true"><i class="{{ link.icon }}"></i></span>
+              {% if link.latest %}<span class="link-latest-badge" aria-hidden="true">[NEW]</span>{% endif %}
+              <span class="link-text">{{ link.text }}</span>
+            </a>
+          {% endfor %}
+        </nav>
+
+        <pre class="prompt">$ cat ./socials</pre>
+        <div class="button-container">
+          <div class="button-group">
+            {% for item in socials %}
+              {% assign social = item.social %}
+              <a href="{{ social.url }}" title="{{ social.title }}" target="{{ social.target }}" class="icon-button" alt="{{ social.alt }}">
+                <i class="{{ social.icon }}"></i>
+              </a>
+            {% endfor %}
+          </div>
+        </div>
+
+        <footer class="footer">
+          <pre class="prompt">$ tail -n 1 ./footer</pre>
+          {{ footer }}
+          <div class="copyright">{{ copyright }}</div>
+        </footer>
+      </div>
+    </div>
+  </main>
+
+  {% if google_analytics_id %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ google_analytics_id }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ google_analytics_id }}');
+    </script>
+  {% endif %}
+  <script src="./scripts.js?v={{ last_modified_at }}"></script>
+</body>
+</html>

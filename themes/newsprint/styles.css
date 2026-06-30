@@ -1,0 +1,339 @@
+/* newsprint — editorial-paper meets developer mono.
+   Inspired by https://link.zhgchg.li/. Cream paper with charcoal ink in
+   light mode, warm-charcoal paper with bone ink in dark mode; serif name,
+   sans body, mono accents (entry numbers, labels, dates). The signature
+   move is the newspaper masthead with VOL/date and numbered link rows
+   that nudge right on hover. Auto-switches with system appearance. */
+:root {
+  --bg: #f3efe7;
+  --bg-2: #ebe6db;
+  --ink: #1a1815;
+  --ink-2: #4a443c;
+  --muted: #8a8175;
+  --rule: #d8cfbf;
+  --rule-strong: #1a1815;
+  --accent: oklch(58% 0.13 38);
+  --accent-2: oklch(58% 0.13 145);
+  --card: #ffffff;
+  --shadow: 0 1px 0 rgba(26, 24, 21, 0.06), 0 8px 24px -16px rgba(26, 24, 21, 0.18);
+}
+
+/* Dark mode. Auto-switches via system appearance unless pinned via
+   `color_scheme: light|dark` in config.yml. */
+@media (prefers-color-scheme: dark) {
+  :root:not(.scheme-light) {
+    --bg: #0e0f12;
+    --bg-2: #15171c;
+    --ink: #ecead8;
+    --ink-2: #b8b6a4;
+    --muted: #6f6e62;
+    --rule: #26282f;
+    --rule-strong: #ecead8;
+    --accent: oklch(72% 0.15 75);
+    --accent-2: oklch(72% 0.13 175);
+    --card: #181a20;
+    --shadow: 0 1px 0 rgba(0, 0, 0, 0.4), 0 12px 32px -18px rgba(0, 0, 0, 0.6);
+  }
+}
+:root.scheme-dark {
+  --bg: #0e0f12;
+  --bg-2: #15171c;
+  --ink: #ecead8;
+  --ink-2: #b8b6a4;
+  --muted: #6f6e62;
+  --rule: #26282f;
+  --rule-strong: #ecead8;
+  --accent: oklch(72% 0.15 75);
+  --accent-2: oklch(72% 0.13 175);
+  --card: #181a20;
+  --shadow: 0 1px 0 rgba(0, 0, 0, 0.4), 0 12px 32px -18px rgba(0, 0, 0, 0.6);
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  font-size: 16px;
+  line-height: 1.5;
+  padding: env(safe-area-inset-top) 0 env(safe-area-inset-bottom);
+}
+
+/* Subtle dotted halftone overlay — gives the cream "paper" feel without
+   loading an image. Drops to low opacity in dark mode. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.025) 1px, transparent 1px);
+  background-size: 3px 3px;
+  opacity: 0.5;
+  z-index: 0;
+  mix-blend-mode: multiply;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not(.scheme-light) body::before { mix-blend-mode: screen; opacity: 0.15; }
+}
+:root.scheme-dark body::before { mix-blend-mode: screen; opacity: 0.15; }
+
+a { color: inherit; text-decoration: none; }
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.mono {
+  font-family: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+.serif {
+  font-family: 'Fraunces', Georgia, 'Times New Roman', serif;
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 56px 28px 72px;
+}
+
+/* Masthead */
+.masthead {
+  border-top: 2px solid var(--rule-strong);
+  border-bottom: 1px solid var(--rule);
+  padding: 14px 0 18px;
+  margin-bottom: 36px;
+}
+.masthead-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-2);
+  margin-bottom: 10px;
+}
+.masthead-head {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+.masthead-avatar {
+  width: clamp(72px, 18vw, 84px);
+  height: clamp(72px, 18vw, 84px);
+  border-radius: 4px;
+  object-fit: cover;
+  border: 1px solid var(--rule);
+  flex-shrink: 0;
+  max-width: 100%;
+}
+.masthead-headline { flex: 1; min-width: 0; }
+.masthead-name {
+  margin: 0;
+  font-size: clamp(34px, 9vw, 44px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  word-break: break-word;
+}
+.masthead-bio {
+  margin: 18px 0 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--ink-2);
+  max-width: 460px;
+}
+
+/* Section */
+.section { margin-bottom: 36px; }
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 12px;
+  gap: 12px;
+}
+.section-label {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--ink);
+}
+.section-count {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+/* Link rows — numbered, with arrow that nudges right on hover */
+.links { display: flex; flex-direction: column; }
+.link-row {
+  display: grid;
+  grid-template-columns: 32px 1fr auto;
+  gap: 16px;
+  align-items: center;
+  padding: 18px 0;
+  border-top: 1px solid var(--rule);
+  color: var(--ink);
+  transition: padding-left 0.18s ease, color 0.18s ease;
+  min-height: 48px; /* meet 44px tap target with comfort */
+}
+.link-row:last-child { border-bottom: 1px solid var(--rule); }
+.link-row:hover { padding-left: 12px; }
+.link-row-index {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.link-row-body { min-width: 0; }
+.link-row-title {
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.link-row-title i {
+  font-size: 18px;
+  color: var(--ink-2);
+  width: 22px;
+  text-align: center;
+  flex-shrink: 0;
+}
+.link-button-text {
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+.link-row-arrow {
+  font-size: 16px;
+  color: var(--muted);
+  transition: color 0.18s ease, transform 0.18s ease;
+}
+.link-row:hover .link-row-arrow {
+  color: var(--accent);
+  transform: translateX(4px);
+}
+
+/* "Latest" link variant — small accent-colored "NEW" tag inline.
+   Text wraps to 2 lines so long RSS / YouTube titles stay readable. */
+.link-latest-badge {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  padding: 2px 6px;
+  margin-right: 8px;
+  background: var(--accent);
+  color: var(--bg);
+  border-radius: 2px;
+  vertical-align: 1px;
+}
+.link-row.link-latest .link-row-body span:not(.link-button-text) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+          line-clamp: 2;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  line-height: 1.3;
+}
+
+/* Connect grid (socials) */
+.socials {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  border-top: 1px solid var(--rule);
+}
+.social-cell {
+  padding: 16px 4px;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  min-height: 56px;
+  transition: color 0.18s ease;
+}
+.social-cell:hover { color: var(--accent); }
+.social-cell:nth-child(odd) {
+  border-right: 1px solid var(--rule);
+  padding-right: 18px;
+}
+.social-cell:nth-child(even) { padding-left: 18px; }
+.social-cell-label {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+.social-cell-label > span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.social-cell-label i { font-size: 16px; color: var(--ink-2); flex-shrink: 0; }
+.social-cell-arrow {
+  font-size: 11px;
+  color: var(--muted);
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  flex-shrink: 0;
+}
+
+/* Footer */
+.footer {
+  margin-top: 48px;
+  padding-top: 18px;
+  border-top: 1px solid var(--rule);
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.footer-text {
+  margin-bottom: 14px;
+  text-transform: none;
+  letter-spacing: normal;
+  font-size: 13px;
+  color: var(--ink-2);
+  font-family: 'Inter', sans-serif;
+}
+.footer-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.footer-meta a { color: inherit; border-bottom: 1px solid var(--rule); }
+
+@media (max-width: 480px) {
+  .page { padding: 40px 20px 56px; }
+  .link-row { grid-template-columns: 28px 1fr auto; gap: 12px; }
+  .link-row-title { font-size: 17px; }
+  .social-cell-label { font-size: 13px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition: none !important; animation: none !important; }
+  .link-row:hover { padding-left: 0; }
+  .link-row:hover .link-row-arrow { transform: none; }
+}

@@ -1,0 +1,218 @@
+:root {
+  --bg: #ffffff;
+  --fg: #0a0a0a;
+  --muted: #6b6b6b;
+  --rule: #e5e5e5;
+  --hover: #f4f4f4;
+  --accent: #0a0a0a;
+  --radius: 0px;
+  --mono: 'SFMono-Regular', 'JetBrains Mono', 'Menlo', 'Consolas', monospace;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Dark mode. By default auto-switches via system appearance, but the user
+   can pin it via `color_scheme: light|dark` in config.yml — see the
+   :root.scheme-dark block below for the forced-dark override.
+   Same monochrome restraint, just inverted with slightly elevated grays so
+   the hairline rules and hover states are still visible against pure black. */
+@media (prefers-color-scheme: dark) {
+  :root:not(.scheme-light) {
+    --bg: #0d0d0d;
+    --fg: #ededed;
+    --muted: #8a8a8a;
+    --rule: #262626;
+    --hover: #1a1a1a;
+    --accent: #ededed;
+  }
+}
+:root.scheme-dark {
+  --bg: #0d0d0d;
+  --fg: #ededed;
+  --muted: #8a8a8a;
+  --rule: #262626;
+  --hover: #1a1a1a;
+  --accent: #ededed;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 64px 24px;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.container {
+  width: 100%;
+  max-width: 480px;
+}
+
+.profile { text-align: left; }
+
+.profile-pic {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 24px;
+  display: block;
+}
+
+.name {
+  font-family: var(--mono);
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+
+.description {
+  font-size: 15px;
+  color: var(--muted);
+  text-wrap: pretty;
+  max-width: 38ch;
+}
+
+.rule {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 40px 0;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+}
+
+.link-button {
+  display: grid;
+  grid-template-columns: 24px 1fr auto;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 4px;
+  border-bottom: 1px solid var(--rule);
+  font-family: var(--mono);
+  font-size: 14px;
+  letter-spacing: 0.01em;
+  transition: padding-left 0.18s ease, color 0.18s ease;
+}
+
+.link-button:first-child { border-top: 1px solid var(--rule); }
+
+.link-button:hover,
+.link-button:focus-visible {
+  padding-left: 12px;
+  outline: none;
+}
+
+.link-button:focus-visible {
+  background: var(--hover);
+}
+
+.link-icon { display: inline-flex; justify-content: center; }
+.link-icon i { font-size: 14px; }
+
+.link-text { color: var(--fg); }
+.link-button-text { color: var(--muted); font-size: 12px; margin-left: 6px; }
+
+.link-arrow {
+  font-family: var(--mono);
+  color: var(--muted);
+  transition: transform 0.18s ease, color 0.18s ease;
+}
+
+.link-button:hover .link-arrow,
+.link-button:focus-visible .link-arrow {
+  color: var(--fg);
+  transform: translateX(4px);
+}
+
+.button-container { margin-top: 40px; }
+
+.button-group {
+  display: flex;
+  gap: 18px;
+  justify-content: flex-start;
+}
+
+.icon-button {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  transition: color 0.18s ease, transform 0.18s ease;
+}
+
+.icon-button i { font-size: 18px; }
+
+.icon-button:hover,
+.icon-button:focus-visible {
+  color: var(--fg);
+  outline: none;
+}
+
+.icon-button:focus-visible { outline: 1px solid var(--fg); outline-offset: 4px; }
+
+.footer {
+  margin-top: 56px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.footer a {
+  border-bottom: 1px solid var(--muted);
+  transition: border-color 0.18s ease, color 0.18s ease;
+}
+
+.footer a:hover { color: var(--fg); border-color: var(--fg); }
+
+.copyright { margin-top: 12px; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* "Latest" link variant — bracket label, mono caps, single-line clamp */
+.link-button.link-latest {
+  align-items: start;
+  grid-template-columns: auto 24px 1fr auto;
+}
+.link-button.link-latest .link-text { font-weight: 500; }
+.link-latest-badge {
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  margin-right: 6px;
+  white-space: nowrap;
+}
+.link-latest .link-text {
+  min-width: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+          line-clamp: 2;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  line-height: 1.4;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}"{% if color_scheme == "light" %} class="scheme-light"{% elsif color_scheme == "dark" %} class="scheme-dark"{% endif %}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>{{ title }}</title>
+
+  <meta name="last-modified" content="{{ last_modified_at }}">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#f3efe7">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0e0f12">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+  <meta property="og:title" content="{{ title }}" />
+  <meta name="author" content="{{ name }}" />
+  <meta property="og:locale" content="en" />
+  <meta name="description" content="{{ tagline }}" />
+  <meta property="og:description" content="{{ tagline }}" />
+  <meta property="og:site_name" content="{{ title }}" />
+  <meta property="og:image" content="{{ avatar }}" />
+  <meta property="og:type" content="article" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="twitter:image" content="{{ avatar }}" />
+  <meta property="twitter:title" content="{{ title }}" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="./images/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./images/favicons/favicon-16x16.png">
+  <link rel="manifest" href="./images/favicons/site.webmanifest">
+  <link rel="shortcut icon" href="./images/favicons/favicon.ico">
+  <meta name="apple-mobile-web-app-title" content="{{ title }}">
+  <meta name="application-name" content="{{ title }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="./styles.css?v={{ last_modified_at }}" />
+</head>
+<body>
+  <main class="page">
+    <header class="masthead">
+      <div class="masthead-meta mono">
+        <span>VOL. {{ year }} · LINKS</span>
+        <span>{{ today }}</span>
+      </div>
+      <div class="masthead-head">
+        <img src="{{ avatar }}" alt="{{ name }}" class="masthead-avatar" />
+        <div class="masthead-headline">
+          <h1 class="masthead-name serif">{{ name }}</h1>
+        </div>
+      </div>
+      <p class="masthead-bio">{{ tagline }}</p>
+    </header>
+
+    {% assign link_count = links | size %}
+    <section class="section">
+      <div class="section-head">
+        <h2 class="section-label mono">01 / Links</h2>
+        <span class="section-count mono">{{ link_count }} ENTRIES</span>
+      </div>
+      <div class="links">
+        {% for item in links %}
+          {% assign link = item.link %}
+          <a href="{{ link.url }}" target="{{ link.target }}" class="link-row{% if link.latest %} link-latest{% endif %}" alt="{{ link.alt }}" title="{{ link.title }}">
+            <span class="link-row-index mono">{{ forloop.index | prepend: '00' | slice: -2, 2 }}</span>
+            <div class="link-row-body">
+              <div class="link-row-title">
+                <i class="{{ link.icon }}"></i>
+                <span>{% if link.latest %}<span class="link-latest-badge mono">NEW</span>{% endif %}{{ link.text }}</span>
+              </div>
+            </div>
+            <span class="link-row-arrow">&rarr;</span>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+
+    {% assign social_count = socials | size %}
+    <section class="section">
+      <div class="section-head">
+        <h2 class="section-label mono">02 / Connect</h2>
+        <span class="section-count mono">{{ social_count }} ENTRIES</span>
+      </div>
+      <div class="socials">
+        {% for item in socials %}
+          {% assign social = item.social %}
+          <a href="{{ social.url }}" title="{{ social.title }}" target="{{ social.target }}" class="social-cell" alt="{{ social.alt }}">
+            <span class="social-cell-label">
+              <i class="{{ social.icon }}"></i>
+              <span>{{ social.title }}</span>
+            </span>
+            <span class="social-cell-arrow">&rarr;</span>
+          </a>
+        {% endfor %}
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-text">{{ footer }}</div>
+      <div class="footer-meta mono">
+        <span>{{ copyright }}</span>
+      </div>
+    </footer>
+  </main>
+
+  <script src="./scripts.js?v={{ last_modified_at }}"></script>
+  {% if google_analytics_id %}
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ google_analytics_id }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ google_analytics_id }}');
+    </script>
+  {% endif %}
+</body>
+</html>
