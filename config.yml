@@ -140,7 +140,7 @@ links:
   - link:
       icon: "fa-solid fa-person-drowning"
       text: "maukau.diselamatkan.org"
-      url: "https://diselamatkan.org"
+      url: "https://sabas.pages.dev/pasti"
       target: "_blank"
 
   # → uses GithubRepoStarsCountPlugin
