@@ -105,7 +105,7 @@ links:
       target: "_blank"
 
   - link:
-      icon: "fa-solid fa-wordpress"
+      icon: "fa-brands fa-wordpress"
       text: "Blog"
       url: "https://denny.wordpress.com"
       alt: "wordpress"
@@ -119,13 +119,13 @@ links:
       target: "_blank"
 
   - link:
-      icon: "fa-solid fa-blogger"
+      icon: "fa-brands fa-blogger"
       text: "Blogspot <span class='link-button-text'>(120+ Posts)</span>"
       url: "https://dennyhalim.blogspot.com"
       target: "_blank"
 
   - link:
-      icon: "fa-solid fa-blogger"
+      icon: "fa-brands fa-blogger"
       text: "Tips Blogspot <span class='link-button-text'>(120+ Posts)</span>"
       url: "https://komputips.blogspot.com"
       target: "_blank"
@@ -150,8 +150,8 @@ links:
   #   theme's "LATEST" badge styling.
   - link:
       icon: "fa-solid fa-newspaper"
-      text: "{{ vars.RSSFeedPlugin['https://denny.wordpress.com/feed'][0].title }}"
-      url: "{{ vars.RSSFeedPlugin['https://denny.wordpress.com/feed'][0].url }}"
+      text: "{{ vars.RSSFeedPlugin['https://denny.wordpress.com/feed'][5].title }}"
+      url: "{{ vars.RSSFeedPlugin['https://denny.wordpress.com/feed'][5].url }}"
       alt: "Latest blog post"
       title: "Latest blog post"
       target: "_blank"
@@ -159,8 +159,8 @@ links:
 
   - link:
       icon: "fa-solid fa-newspaper"
-      text: "{{ vars.RSSFeedPlugin['https://dennyhalim.blogspot.com/feeds/posts/default'][0].title }}"
-      url: "{{ vars.RSSFeedPlugin['https://dennyhalim.blogspot.com/feeds/posts/default'][0].url }}"
+      text: "{{ vars.RSSFeedPlugin['https://dennyhalim.blogspot.com/feeds/posts/default'][5].title }}"
+      url: "{{ vars.RSSFeedPlugin['https://dennyhalim.blogspot.com/feeds/posts/default'][5].url }}"
       alt: "Latest blog post"
       title: "Latest blog post"
       target: "_blank"
@@ -168,8 +168,8 @@ links:
 
   - link:
       icon: "fa-solid fa-cross"
-      text: "{{ vars.RSSFeedPlugin['https://sabas.pages.dev/?format=rss'][0].title }}"
-      url: "{{ vars.RSSFeedPlugin['https://sabas.pages.dev/?format=rss'][0].url }}"
+      text: "{{ vars.RSSFeedPlugin['https://sabas.pages.dev/?format=rss'][10].title }}"
+      url: "{{ vars.RSSFeedPlugin['https://sabas.pages.dev/?format=rss'][10].url }}"
       alt: "Latest blog post"
       title: "Latest blog post"
       target: "_blank"
