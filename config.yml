@@ -86,7 +86,7 @@ avatar: "https://cdn5.telesco.pe/file/TA1T0y9LP70hT3rhWWQt9h_5in-fWi8sGq0Wd6e2M-
 name: "@dennyhalim"
 tagline: >-
     father of fives, husband of One, technophile, saved by Grace.
-    <br/>aku.diselamatkan.org
+    <br/><a href="https://alkitabsaja.github.io/?utm_source=dh">aku.diselamatkan.org</a>
 #    Followed by {{ vars.GithubProfilePlugin['ZhgChgLi'].followers }} on GitHub across {{ vars.GithubProfilePlugin['ZhgChgLi'].repos }} public repos.
 
 # -----------------------------------------------------------------------------
@@ -108,7 +108,7 @@ links:
   - link:
       icon: "fa-brands fa-wordpress"
       text: "Blog"
-      url: "https://denny.wordpress.com"
+      url: "https://denny.wordpress.com/?utm_source=gh"
       alt: "wordpress"
       title: "wordpress"
       target: "_blank"
@@ -116,31 +116,31 @@ links:
   - link:
       icon: "fa-solid fa-screwdriver-wrench"
       text: "Polaris Network"
-      url: "https://www.mypolaris.com/"
+      url: "https://www.mypolaris.com/?utm_source=dh"
       target: "_blank"
 
   - link:
       icon: "fa-brands fa-blogger"
       text: "Blogspot"
-      url: "https://dennyhalim.blogspot.com"
+      url: "https://dennyhalim.blogspot.com/?utm_source=gh"
       target: "_blank"
 
   - link:
       icon: "fa-brands fa-blogger"
       text: "Tips Blogspot "
-      url: "https://komputips.blogspot.com"
+      url: "https://komputips.blogspot.com/?utm_source=gh"
       target: "_blank"
 
   - link:
       icon: "fa-solid fa-rss"
       text: "Wikidot"
-      url: "https://dennyhalim.wikidot.com"
+      url: "https://dennyhalim.wikidot.com/?utm_source=gh"
       target: "_blank"
 
   - link:
       icon: "fa-solid fa-person-drowning"
       text: "maukau.diselamatkan.org"
-      url: "https://sabas.pages.dev/pasti"
+      url: "https://sabas.pages.dev/pasti/?utm_source=gh"
       target: "_blank"
 
   # → uses GithubRepoStarsCountPlugin
