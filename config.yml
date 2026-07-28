@@ -86,7 +86,7 @@ avatar: "https://cdn5.telesco.pe/file/TA1T0y9LP70hT3rhWWQt9h_5in-fWi8sGq0Wd6e2M-
 name: "@dennyhalim"
 tagline: >-
     father of fives, husband of One, technophile, saved by Grace.
-    <br/><a href="https://alkitabsaja.github.io/?utm_source=dh">aku.diselamatkan.org</a>
+    <br/>aku.diselamatkan.org
 #    Followed by {{ vars.GithubProfilePlugin['ZhgChgLi'].followers }} on GitHub across {{ vars.GithubProfilePlugin['ZhgChgLi'].repos }} public repos.
 
 # -----------------------------------------------------------------------------
