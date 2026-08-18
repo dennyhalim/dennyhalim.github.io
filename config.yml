@@ -143,6 +143,12 @@ links:
       url: "https://sabas.pages.dev/pasti/?utm_source=gh"
       target: "_blank"
 
+  - link:
+      icon: "fa-solid fa-person-drowning"
+      text: "MatiKemana.com"
+      url: "https://share.google/ZjfsKyqouqawr9vS7"
+      target: "_blank"
+
   # → uses GithubRepoStarsCountPlugin
 #  - link:
 #      icon: "fa-brands fa-swift"
