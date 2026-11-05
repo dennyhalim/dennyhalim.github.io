@@ -76,7 +76,7 @@ deploy() {
 }
 
 fetch_news() {
-  pip install feedparser trafilatura
+  pip install feedparser trafilatura BeautifulSoup
   python scripts/sitegen.py
   mv news.html articles.json "$SITE_DIR"
   ls -l
