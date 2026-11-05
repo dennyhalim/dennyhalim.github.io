@@ -77,9 +77,8 @@ deploy() {
 
 fetch_news() {
   pip install feedparser trafilatura
-  pushd  "$SITE_DIR"
   python scripts/sitegen.py
-  popd
+  move news.html articles.json "$SITE_DIR"
   ls -l
   ls -l "$SITE_DIR"
 }
