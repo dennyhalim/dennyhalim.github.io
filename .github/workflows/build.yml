@@ -1,18 +1,5 @@
 name: 'Automatic build'
 on:
-  push:
-    branches:
-      - main
-    paths-ignore:
-      - .gitignore
-      - README.md
-      - LICENSE
-      - .claude/**
-      - plugins/README.md
-      - scripts/**
-      - seed-cache.rb
-      - preview.sh
-      - 'themes/**/preview-*.png'
   workflow_dispatch:
   schedule:
     - cron: '0 0 * * *'  # Runs daily at midnight (00:00 UTC)
