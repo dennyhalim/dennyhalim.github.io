@@ -78,6 +78,8 @@ deploy() {
 fetch_news() {
   pip install feedparser trafilatura
   python scripts/sitegen.py
+  ls -l
+  ls -l "$SITE_DIR"
 }
 
 main() {
