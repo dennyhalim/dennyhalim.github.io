@@ -75,9 +75,15 @@ deploy() {
   git push -u origin "$PAGES_BRANCH" --force
 }
 
+fetch_news() {
+  pip install feedparser trafilatura
+  python scripts/gensite.py
+}
+
 main() {
   init
   build
+  fetch_news
   setup_gh
   backup
   flush
