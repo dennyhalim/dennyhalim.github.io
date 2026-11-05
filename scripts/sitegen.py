@@ -4,6 +4,8 @@ import feedparser
 from datetime import datetime
 import html
 import json
+import re
+from bs4 import BeautifulSoup
 import trafilatura
 
 # Replace this with your actual raw OPML URL (e.g., GitHub Raw, Gist, or public server)
@@ -33,16 +35,51 @@ def parse_opml_remote(opml_url):
         return {}
 
 def get_full_content(entry, link):
+    raw_html = ""
+    
+    # 1. Try to grab full content if provided directly in RSS (e.g. content:encoded)
     if hasattr(entry, 'content') and entry.content:
-        return entry.content[0].get('value', '')
-    downloaded = trafilatura.fetch_url(link)
-    if downloaded:
-        extracted = trafilatura.extract(downloaded, include_comments=False, include_tables=False)
-        if extracted:
-            paragraphs = extracted.split('\n\n')
-            return "".join([f"<p>{html.escape(p)}</p>" for p in paragraphs if p.strip()])
-    return entry.get('summary', 'Full content unavailable.')
+        raw_html = entry.content[0].get('value', '')
+    
+    # 2. Otherwise, use trafilatura to extract clean HTML directly from the link
+    if not raw_html or len(raw_html) < 200:
+        downloaded = trafilatura.fetch_url(link)
+        if downloaded:
+            # Extract as clean HTML to preserve paragraphs and formatting
+            extracted_html = trafilatura.extract(
+                downloaded, 
+                output_format='html', 
+                include_comments=False, 
+                include_tables=False,
+                include_formatting=True
+            )
+            if extracted_html:
+                raw_html = extracted_html
 
+    # 3. Fallback to summary if nothing else worked
+    if not raw_html:
+        raw_html = f"<p>{entry.get('summary', 'Full content unavailable.')}</p>"
+
+    # 4. Sanitize and remove CSS leakage using BeautifulSoup
+    soup = BeautifulSoup(raw_html, 'html.parser')
+    
+    # Remove all style tags and inline CSS classes that leak from page builders
+    for style_tag in soup.find_all(['style', 'script']):
+        style_tag.decompose()
+        
+    for tag in soup.find_all(True):
+        if tag.has_attr('class'):
+            del tag['class']  # Strip out theme-specific layout classes like Kadence
+        if tag.has_attr('style'):
+            del tag['style']  # Strip out inline styling
+
+    cleaned_html = str(soup)
+
+    # 5. Regex safety net: Remove any raw CSS rule strings that leaked into text nodes
+    cleaned_html = re.sub(r'\.[a-zA-Z0-9_\-]+(\s*>\s*\.[a-zA-Z0-9_\-]+)*\s*\{[^}]*\}', '', cleaned_html)
+
+    return cleaned_html
+    
 def fetch_all_articles(categories):
     all_articles = []
     feed_registry = {}
