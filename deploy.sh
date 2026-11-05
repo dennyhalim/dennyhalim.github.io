@@ -77,7 +77,7 @@ deploy() {
 
 fetch_news() {
   pip install feedparser trafilatura
-  python scripts/gensite.py
+  python scripts/sitegen.py
 }
 
 main() {
