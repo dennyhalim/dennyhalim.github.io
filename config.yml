@@ -149,6 +149,12 @@ links:
       url: "https://share.google/ZjfsKyqouqawr9vS7"
       target: "_blank"
 
+  - link:
+      icon: "fa-solid fa-rss"
+      text: "ARSIP WEB"
+      url: "https://archive.org/details/@denny_halim777/web-archive"
+      target: "_blank"
+
   # → uses GithubRepoStarsCountPlugin
 #  - link:
 #      icon: "fa-brands fa-swift"
