@@ -273,6 +273,8 @@ def export_json_and_html(articles, feed_registry):
             container.innerHTML = htmlContent;
         }
     </script>
+    <script>window.goatcounter={path:function(p){return location.host+p}}</script>
+    <script data-goatcounter="https://mypolaris.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
     """
