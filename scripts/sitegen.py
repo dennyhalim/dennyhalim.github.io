@@ -120,6 +120,7 @@ def export_json_and_html(articles, feed_registry):
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="5000">
     <title>SMB Cyber Security - Full Text Reader</title>
     <link rel="canonical" href="https://www.mypolaris.com/news/">
     <!-- Pico CSS v2 -->
