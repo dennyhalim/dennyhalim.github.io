@@ -2,7 +2,7 @@ name: 'Automatic build'
 on:
   workflow_dispatch:
   schedule:
-    - cron: '7 */9 * * *'  
+    - cron: '7 */11 * * *'  
 
 # Prevent racing pushes from overwriting each other on gh-pages.
 # `cancel-in-progress: false` lets every triggered build complete.
