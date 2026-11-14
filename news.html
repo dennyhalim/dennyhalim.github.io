@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="5000">
+    <title>SMB Cyber Security - Full Text Reader</title>
+    <link rel="canonical" href="https://www.mypolaris.com/news/">
+    <!-- Pico CSS v2 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+    <style>
+        body { display: grid; grid-template-columns: 280px 1fr; min-height: 100vh; margin: 0; }
+        aside { background: var(--card-background-color); border-right: var(--pico-border-width) solid var(--pico-muted-border-color); padding: 1.5rem; overflow-y: auto; height: 100vh; position: sticky; top: 0; }
+        main { padding: 2rem; overflow-y: auto; }
+        .nav-btn { width: 100%; text-align: left; margin-bottom: 0.35rem; font-size: 0.9rem; padding: 0.5rem 0.75rem; background: transparent; border: none; color: var(--pico-color); cursor: pointer; border-radius: var(--pico-border-radius); }
+        .nav-btn:hover, .nav-btn.active { background: var(--pico-primary-background); color: var(--pico-primary-inverse); }
+        .cat-header { font-size: 0.75rem; font-weight: bold; text-transform: uppercase; color: var(--pico-muted-color); margin: 1.25rem 0 0.5rem 0.5rem; letter-spacing: 0.05em; }
+        .feed-btn { padding-left: 1.25rem; font-size: 0.85rem; opacity: 0.85; }
+        .article-card { margin-bottom: 2rem; }
+        .source-badge { font-size: 0.75rem; text-transform: uppercase; font-weight: bold; padding: 0.2rem 0.5rem; border-radius: 4px; background: var(--pico-secondary-background); color: var(--pico-secondary-inverse); }
+        @media (max-width: 900px) {
+            body { display: block; }
+            aside { height: auto; position: static; border-right: none; border-bottom: var(--pico-border-width) solid var(--pico-muted-border-color); }
+        }
+    </style>
+</head>
+<body>
+    <aside>
+        <h4 style="margin-bottom: 1rem;">🔒 Security Feeds</h4>
+        <button class="nav-btn active" onclick="filterView('all', null)">🌟 All Feeds Stream</button>
+        <div id="nav-categories">Loading categories...</div>
+    </aside>
+
+    <main>
+        <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <div>
+                <h2 id="view-title" style="margin-bottom: 0.2rem;">All Feeds Stream</h2>
+                <small id="view-subtitle" style="color: var(--pico-muted-color);">Showing latest updates across all security sources</small>
+            </div>
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <small id="last-updated" style="color: var(--pico-muted-color);"></small>
+                <button class="outline secondary" style="padding: 0.4rem 0.8rem; font-size: 0.8rem;" onclick="toggleTheme()">🌓 Theme</button>
+            </div>
+        </header>
+
+        <section style="margin-bottom: 2rem;">
+            <input type="search" id="search-input" placeholder="🔍 Search articles by keyword (e.g. ransomware, phishing, CISA)..." oninput="applyFilters()" />
+        </section>
+
+        <div id="articles-container"><article><p aria-busy="true">Loading articles...</p></article></div>
+    </main>
+
+    <script>
+        let globalArticles = [];
+        let globalRegistry = {};
+        let currentFilterType = 'all';
+        let currentFilterTarget = null;
+
+        fetch('articles.json')
+            .then(res => res.json())
+            .then(data => {
+                globalArticles = data.articles;
+                globalRegistry = data.registry;
+                document.getElementById('last-updated').innerText = 'Updated: ' + data.updatedAt;
+                buildSidebar();
+                applyFilters();
+            })
+            .catch(() => {
+                document.getElementById('articles-container').innerHTML = '<article><p>Failed to load articles.json. Ensure GitHub Actions has run at least once.</p></article>';
+            });
+
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute('data-theme');
+            html.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
+        }
+
+        function buildSidebar() {
+            const container = document.getElementById('nav-categories');
+            let htmlContent = '';
+            for (const [cat, feeds] of Object.entries(globalRegistry)) {
+                htmlContent += `<div class="cat-header">${cat}</div>`;
+                htmlContent += `<button class="nav-btn" onclick="filterView('category', '${cat}')">📁 All ${cat}</button>`;
+                feeds.forEach(feed => {
+                    htmlContent += `<button class="nav-btn feed-btn" onclick="filterView('feed', '${feed}')">▪ ${feed}</button>`;
+                });
+            }
+            container.innerHTML = htmlContent;
+        }
+
+        function filterView(type, target) {
+            currentFilterType = type;
+            currentFilterTarget = target;
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            let title = "All Feeds Stream";
+            let subtitle = "Showing latest updates across all security sources";
+
+            if (type === 'category') {
+                title = `Category: ${target}`;
+                subtitle = `Showing updates from all sources in ${target}`;
+            } else if (type === 'feed') {
+                title = `Source: ${target}`;
+                subtitle = `Showing full articles from ${target}`;
+            }
+
+            document.getElementById('view-title').innerText = title;
+            document.getElementById('view-subtitle').innerText = subtitle;
+            applyFilters();
+        }
+
+        function applyFilters() {
+            const query = document.getElementById('search-input').value.toLowerCase().trim();
+            let filtered = globalArticles;
+
+            if (currentFilterType === 'category') {
+                filtered = filtered.filter(a => a.category === currentFilterTarget);
+            } else if (currentFilterType === 'feed') {
+                filtered = filtered.filter(a => a.source === currentFilterTarget);
+            }
+
+            if (query) {
+                filtered = filtered.filter(a => 
+                    a.title.toLowerCase().includes(query) || 
+                    a.content.toLowerCase().includes(query) ||
+                    a.source.toLowerCase().includes(query) ||
+                    a.category.toLowerCase().includes(query)
+                );
+            }
+
+            renderArticles(filtered);
+        }
+
+        function renderArticles(list) {
+            const container = document.getElementById('articles-container');
+            if (list.length === 0) {
+                container.innerHTML = '<article><p>No matching articles found.</p></article>';
+                return;
+            }
+            let htmlContent = '';
+            list.forEach(art => {
+                htmlContent += `
+                    <article class="article-card">
+                        <header style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                            <span class="source-badge">${art.source}</span>
+                            <small>${art.dateStr}</small>
+                        </header>
+                        <h3 style="margin-bottom: 0.5rem;"><a href="${art.link}" target="_blank" style="color: inherit; text-decoration: none;">${art.title}</a></h3>
+                        <small style="color: var(--pico-muted-color); display: block; margin-bottom: 1rem;">Category: <b>${art.category}</b></small>
+                        <div>${art.content}</div>
+                        <footer>
+                            <a href="${art.link}" target="_blank" class="secondary" style="font-size: 0.9rem;">View original source &rarr;</a>
+                        </footer>
+                    </article>
+                `;
+            });
+            container.innerHTML = htmlContent;
+        }
+    </script>
+    <script>window.goatcounter={path:function(p){return location.host+p}}</script>
+    <script data-goatcounter="https://mypolaris.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
+    
