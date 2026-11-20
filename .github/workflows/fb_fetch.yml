@@ -22,16 +22,11 @@ jobs:
           python-version: '3.12'
           cache: 'pip'
 
-      - name: Install mods
-        run: |
-          # python -m pip install --upgrade pip
-          pip install curl_cffi yt-dlp google-api-python-client google-auth-oauthlib requests
-          # pip install curl_cffi yt-dlp python-telegram-bot requests playwright yt-dlp requests google-api-python-client google-auth-oauthlib google-auth-httplib2
-          # playwright install chromium
-
       - name: Run python script
         env:
           # If your script needs secrets, add them in Repo > Settings > Secrets
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-        run: python scripts/fb_fetch.py
+        run: |
+          pip install curl_cffi yt-dlp google-api-python-client google-auth-oauthlib requests
+          python scripts/fb_fetch.py
