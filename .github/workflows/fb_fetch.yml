@@ -29,4 +29,4 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
           pip install curl_cffi yt-dlp google-api-python-client google-auth-oauthlib requests
-          python scripts/fb_fetch.py
+          python scripts/fb_fetch.py 100008547796685 --download --upload --telegram-send-video
