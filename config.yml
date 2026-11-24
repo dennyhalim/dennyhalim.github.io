@@ -59,7 +59,6 @@ plugins:
   # Iterate inside theme index.html with {% for item in vars.RSSFeedPlugin[...] %}.
   - RSSFeedPlugin:
       - https://denny.wordpress.com/feed
-      - https://dennyhalim.blogspot.com/feeds/posts/default
       - https://sabas.pages.dev/?format=rss
 
   # Days until / since a target date. Hash-style — labels become keys.
